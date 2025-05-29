@@ -31,7 +31,7 @@ export const About = () => {
           <Typography variant="h2" color="white" mt={3}>
             Know Who <span style={{ color: 'violet' }}>I'M</span>
           </Typography>
-          <Typography variant="h5" color="white" mt={3}>
+          <Typography sx={{fontSize:{xs:"18px",sm:"27px"}}} color="white" mt={3}>
             "Hi everyone, I'm <span style={{ color: 'violet' }}><i>SAHAYA SNEHA</i></span> from{' '}
             <span style={{ color: 'violet' }}><i>Tirunelveli</i></span>. I recently completed my{' '}
             <span style={{ color: 'violet' }}><i>Frontend Development</i></span> training at Karka Software Academy.

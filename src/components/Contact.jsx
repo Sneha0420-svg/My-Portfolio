@@ -44,11 +44,11 @@ export const Contact = () => {
           >
             {/* Contact Heading */}
             <Typography
-              variant="h4"
+              variant="h2"
               sx={{
                 color: "white",
                 fontWeight: "bold",
-                fontSize: { xs: "24px", sm: "32px", md: "40px" },
+                fontSize: { xs: "24px", sm: "32px", md: "50px" },
               }}
             >
               CONTACT <span style={{ color: "violet" }}>Me</span>
@@ -75,18 +75,20 @@ export const Contact = () => {
             </Typography>
 
             {/* Contact Details */}
-            <Grid container spacing={2} justifyContent={"center"} sx={{ marginTop: "20px",pl:6}}>
+            <Grid container spacing={2}  sx={{ marginTop: "20px",justifyContent:"center"}}>
               {/* Phone Number */}
               <Grid
                 item
-                xs={6.1}
+                xs={9.5}
+                sm={6.1}
                 sx={{
                   display: "flex",
                   alignItems: "center",
+                 
                 }}
               >
                 <CallIcon sx={{ color: "violet", marginRight: "10px" }} />
-                <Typography variant="h6" color="white" fontSize={{ xs: "16px", sm: "20px" }}>
+                <Typography variant="h6" color="white" fontSize={{ xs: "16px", sm: "18px" }}>
                   +91 9677575630
                 </Typography>
               </Grid>
@@ -94,7 +96,8 @@ export const Contact = () => {
               {/* Email */}
               <Grid
                 item
-                xs={6.1}
+                xs={9.5}
+                sm={6.1}
                 sx={{
                   display: "flex",
                   alignItems: "center",
@@ -102,14 +105,15 @@ export const Contact = () => {
                 }}
               >
                 <EmailIcon sx={{ color: "violet", marginRight: "10px" }} />
-                <Link href='mailto:snehajerish@gmail.com' underline="none"  color="white" fontSize={{ xs: "16px", sm: "20px" }}>
+                <Link href='mailto:snehajerish@gmail.com' underline="none"  color="white" fontSize={{ xs: "16px", sm: "18px" }}>
                   snehajerish@gmail.com
                   </Link>
               </Grid>
             {/* Linked In */}
               <Grid
                 item
-                xs={6.1}
+                xs={9.5}
+                sm={6.1}
                 sx={{
                   display: "flex",
                   alignItems: "center",
@@ -117,7 +121,7 @@ export const Contact = () => {
                 }}
               >
                 <LanguageIcon sx={{ color: "violet", marginRight: "10px" }} />
-                  <Link href='https://www.linkedin.com/in/sahayasneha' underline="none"  color="white" fontSize={{ xs: "16px", sm: "20px" }}>
+                  <Link href='https://www.linkedin.com/in/sahayasneha' underline="none"  color="white" fontSize={{ xs: "16px", sm: "18px" }}>
                   linkedin.com/in/sahayasneha
                   </Link>
                 
@@ -125,7 +129,8 @@ export const Contact = () => {
               {/* Github */}
               <Grid
                 item
-                xs={6.1}
+                xs={9.5}
+                sm={6.1}
                 sx={{
                   display: "flex",
                   alignItems: "center",
@@ -133,7 +138,7 @@ export const Contact = () => {
                 }}
               >
                 <GitHubIcon sx={{ color: "violet", marginRight: "10px" }} />
-                <Link href='https://github.com/Sneha0420-svg' underline="none"  color="white" fontSize={{ xs: "16px", sm: "20px" }}>
+                <Link href='https://github.com/Sneha0420-svg' underline="none"  color="white" fontSize={{ xs: "16px", sm: "18px" }}>
                 github.com/Sneha0420-svg
                   </Link>
               </Grid>
@@ -141,7 +146,8 @@ export const Contact = () => {
               {/* Location */}
               <Grid
                 item
-                xs={6.1}
+                xs={9.5}
+                sm={6.1}
                 sx={{
                   display: "flex",
                   alignItems: "center",
@@ -149,7 +155,7 @@ export const Contact = () => {
                 }}
               >
                 <LocationOnIcon sx={{ color: "violet", marginRight: "10px" }} />
-                <Typography variant="h6" color="white" fontSize={{ xs: "16px", sm: "20px" }}>
+                <Typography variant="h6" color="white" fontSize={{ xs: "16px", sm: "18px" }}>
                   Tirunelveli, India
                 </Typography>
               </Grid>

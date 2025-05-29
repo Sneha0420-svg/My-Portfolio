@@ -4,12 +4,32 @@ import { motion } from "framer-motion";
 import { About } from "./About";
 import { Skills } from "./Skills";
 import {Contact} from "./Contact"
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const Home = () => {
   const word = "Frontend-Developer";
   const [displayedLetters, setDisplayedLetters] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const location=useLocation()
+  const navigate=useNavigate()
+   useEffect(() => {
+    if (location.state && location.state.scrollTo) {
+      const id = location.state.scrollTo;
+      setTimeout(() => {
+        if (id === "/") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          const section = document.getElementById(id);
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+        // Clear navigation state to prevent repeated scroll on re-renders
+        navigate(location.pathname, { replace: true, state: {} });
+      }, 100);
+    }
+  }, [location, navigate]);
 
   useEffect(() => {
     let typingSpeed = isDeleting ? 100 : 300; // Typing vs. Deleting speed
@@ -39,6 +59,7 @@ const Home = () => {
         backgroundPosition: "center",
         pt: { xs: 6, md: 12 },
         px: { xs: 2, md: 4 },
+        mt:{xs:5,sm:0}
       }}
     >
       <Grid container spacing={2}>

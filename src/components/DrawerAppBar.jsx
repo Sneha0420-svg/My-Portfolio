@@ -14,7 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // Icons
 import HouseIcon from "@mui/icons-material/House";
@@ -32,6 +32,12 @@ const navItems = [
   { name: "Skills", id: "skills", icon: <PsychologyOutlinedIcon /> },
   { name: "Contact", id: "contact", icon: <ContactPageOutlinedIcon /> },
 ];
+const navItemsTwo= [
+  { name: "Home", id: "home", icon: <HouseIcon /> },
+  { name: "About", id: "about", icon: <Person2OutlinedIcon /> },
+  { name: "Skills", id: "skills", icon: <PsychologyOutlinedIcon /> },
+  { name: "Contact", id: "contact", icon: <ContactPageOutlinedIcon /> },
+];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -43,57 +49,73 @@ function DrawerAppBar(props) {
 
   // Scroll to section
   const navigate = useNavigate();  // Hook to navigate pages
+  const location=useLocation()
 
-  const handleNav = (id) => {
+   const handleNav = (id) => {
     if (id === "resume") {
-      navigate("/resume");  // Navigate to Resume page
+      navigate("/resume");
     } else {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (location.pathname === "/") {
+        // already on home, scroll directly
+        if (id === "/") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          const section = document.getElementById(id);
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+      } else {
+        // navigate to home with scroll info
+        navigate("/", { state: { scrollTo: id } });
+        setMobileOpen(false); // close drawer on mobile after click
+
       }
     }
-  };;
+  };
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
 
     
 
-    <Typography
-  onClick={() => navigate('/')}
-  variant="h4"
-  component="div"
-  mx={2}
-  sx={{
-    flexGrow: 1,
-    display: { xs: "none", sm: "block" },
-    fontFamily: "Brush Script MT",
-    cursor: "pointer",
-    color: "inherit",
-    textDecoration: "none"
-  }}
->
-  Portfolio
-</Typography>
-      <Divider />
+     <Typography
+    onClick={() => navigate('/')}
+    variant="h3"
+    component="div"
+    mx={2}
+    my={3}
+    sx={{
+      flexGrow: 1,
+      fontFamily: "Brush Script MT",
+      cursor: "pointer",
+      color: "black",
+    }}
+  >
+    Portfolio
+  </Typography>
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item.name} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }} onClick={() => handleNav(item.id)}>
-              {item.icon}
-              <ListItemText primary={item.name} sx={{ ml: 1 }} />
-            </ListItemButton>
-          
-          </ListItem>
-        ))}
-        <ListItem disablePadding>
-        <ListItemButton sx={{textAlign:"center"}} onClick={() => handleNav("resume")}>
-        <TextSnippetOutlinedIcon />
-        <ListItemText primary="Resume" sx={{ml:1}}/>
+  {navItemsTwo.map((item, index) => (
+    <React.Fragment key={item.name}>
+      <ListItem disablePadding>
+        <ListItemButton sx={{ textAlign: "center" }} onClick={() => handleNav(item.id)}>
+          {item.icon}
+          <ListItemText primary={item.name} sx={{ ml: 1 }} />
         </ListItemButton>
-        </ListItem>
-      </List>
+      </ListItem>
+      
+        <Divider orientation="horizontal" flexItem sx={{ borderColor: "violet", mx: 2 }} />
+      
+    </React.Fragment>
+  ))}
+  <ListItem disablePadding>
+    <ListItemButton sx={{ textAlign: "center" }} onClick={() => handleNav("resume")}>
+      <TextSnippetOutlinedIcon />
+      <ListItemText primary="Resume" sx={{ ml: 1 }} />
+    </ListItemButton>
+  </ListItem>
+</List>
+
     </Box>
   );
 
@@ -122,11 +144,12 @@ function DrawerAppBar(props) {
   mx={2}
   sx={{
     flexGrow: 1,
-    display: { xs: "none", sm: "block" },
+    display: { xs: "block", sm: "block" },
     fontFamily: "Brush Script MT",
     cursor: "pointer",
     color: "inherit",
-    textDecoration: "none"
+    textDecoration: "none",
+    textAlign:{xs:"center",sm:"start"}
   }}
 >
   Portfolio

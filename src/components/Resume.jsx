@@ -31,9 +31,9 @@ export const Resume = () => {
         >
           <a
 
-             href="Sahaya Sneha.pdf"
+             href="Sahaya_Sneha.pdf"
 
-            download="SahayaSneha_Resume.pdf"
+            download="Sahaya_Sneha.pdf"
             style={{ textDecoration: "none", width: "100%", display: "flex", justifyContent: "center" }}
           >
             <Button

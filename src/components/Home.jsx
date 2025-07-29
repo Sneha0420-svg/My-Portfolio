@@ -5,10 +5,11 @@ import { About } from "./About";
 import { Skills } from "./Skills";
 import {Contact} from "./Contact"
 import { useLocation, useNavigate } from "react-router-dom";
+import { Experience } from "./Experience";
 
 
 const Home = () => {
-  const word = "Frontend-Developer";
+  const word = "Web - Developer";
   const [displayedLetters, setDisplayedLetters] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const location=useLocation()
@@ -150,6 +151,7 @@ const Home = () => {
         </Grid>
       </Grid>
       <About />
+      <Experience/>
       <Skills />
       <Contact />
     </Box>

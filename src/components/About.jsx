@@ -33,12 +33,12 @@ export const About = () => {
           <Typography sx={{ fontSize: { xs: '18px', sm: '27px' }}} color="white" mt={3}>
             "Hi everyone, I'm <span style={{ color: 'violet' }}><i>SAHAYA SNEHA</i></span> from{' '}
             <span style={{ color: 'violet' }}><i>Tirunelveli</i></span>. I completed my{' '}
-            <span style={{ color: 'violet' }}><i>Frontend Development</i></span> training at Karka Academy.  
+            <span style={{ color: 'violet' }}><i>Web Development</i></span> training at Karka Academy.  
             I have experience in building responsive web interfaces using{' '}
-            <span style={{ color: 'violet' }}><i>HTML5, CSS3, JavaScript, React, and TypeScript</i></span>.  
+            <span style={{ color: 'violet' }}><i>HTML5, CSS3, JavaScript, React JS, and TypeScript</i></span>.  
             I’ve worked on projects like <span style={{ color: 'violet' }}><i>Trademitra-AI</i></span> and a{' '}
             <span style={{ color: 'violet' }}><i>Guesthouse Management System</i></span> focused on frontend UI/UX and API handling.  
-            I also have experience with <span style={{ color: 'violet' }}><i>FastAPI, Docker, AWS, Render</i></span> and use{' '}
+            I also have experience with <span style={{ color: 'violet' }}><i>FastAPI, AWS,Vercel</i></span> and use{' '}
             <span style={{ color: 'violet' }}><i>GitHub</i></span> for version control and collaboration."
           </Typography>
           <Typography color="white" mt={4} fontSize={{ xs: '20px', md: '27px' }}>

@@ -3,10 +3,10 @@ import React from "react";
 
 export const Skills = () => {
   const skillCategories = {
-    "Frontend": ["HTML", "CSS", "JavaScript", "TypeScript", "React", "MUI", "Bootstrap"],
+    "Frontend": ["HTML", "CSS", "JavaScript", "TypeScript", "React JS", "MUI", "Bootstrap"],
     "Backend": ["Python", "FastAPI"],
-    "Database": ["MySQL"], // Add your DB here when ready (e.g., PostgreSQL, MongoDB)
-    "Deployment / Tools": ["Docker", "AWS (Deployment)", "Render", "GitHub"]
+    "Database": ["SQL"], // Add your DB here when ready (e.g., PostgreSQL, MongoDB)
+    "Deployment / Tools": [ "AWS (Deployment)", "Vercel", "GitHub"]
   };
 
   return (
